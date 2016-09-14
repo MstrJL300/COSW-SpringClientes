@@ -38,7 +38,7 @@ public class ClientController {
         return clientServices.getAllClients();
     }
     
-    @RequestMapping(value = "/picture/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/client/{id}/picture", method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> getPicture(@PathVariable("id") int val) {
         try{
             return ResponseEntity.ok().contentType(MediaType.parseMediaType("image/jpg")).body(new InputStreamResource(clientServices.getClientPicture(val)));
